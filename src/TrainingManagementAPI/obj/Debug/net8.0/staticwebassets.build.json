@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "m67BFjLsuwDnQ1H3ffUFD142G/MlWga1e2M6PrMdU+8=",
+  "Source": "TrainingManagementAPI",
+  "BasePath": "_content/TrainingManagementAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
