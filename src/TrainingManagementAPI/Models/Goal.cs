@@ -28,6 +28,10 @@ namespace TrainingManagementAPI.Models
 
         // navegación
         public Trainee? Trainee { get; set; }
+
+        // 1:N - Un goal tiene muchos módulos
+        public ICollection<Module> Modules { get; set; } = new List<Module>();
+
     }
 }
 // Nota: no es necesario un Id autonumérico porque la PK es (TraineeId, StartDate)

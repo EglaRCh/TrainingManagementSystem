@@ -16,15 +16,24 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(conn));
 
 var app = builder.Build();
+Console.WriteLine($"🌍 Entorno activo: {app.Environment.EnvironmentName}");
+Console.WriteLine($"🔗 Cadena de conexión: {conn}");
+
 
 // --- Configuración del pipeline ---
 if (app.Environment.IsDevelopment())
 {
+    // Entorno local
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
+else
+{
+    // Entorno Docker / Producción
+    app.UseSwagger();       // Habilitar Swagger también en contenedor
+    app.UseSwaggerUI();
+    // app.UseHttpsRedirection(); // 🔸 Desactivado para evitar cierre sin certificado
+}
 app.MapControllers();
 
 // --- Aplicar migraciones automáticamente ---

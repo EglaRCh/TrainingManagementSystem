@@ -26,5 +26,9 @@ namespace TrainingManagementAPI.Models
 
         // 1 : N  (un trainee puede tener varios objetivos en el tiempo)
         public ICollection<Goal> Goals { get; set; } = new List<Goal>();
+
+        // 1:N (un trainee puede tener varias evaluaciones)
+        public ICollection<Evaluation> Evaluations { get; set; } = new List<Evaluation>();
+    
     }
 }
